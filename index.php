@@ -56,27 +56,37 @@
             }
 
             public function getFullTitle() {
+                //se sottotitolo é true me lo stampa, altrimenti "|"
+                 if ($this -> sottotitolo) {
 
-                if ($sottotitolo == false) {
+                    return $this -> titolo . " : " . $this -> sottotitolo;
 
-                    return $this -> titolo . " questo film é senza sottotitolo";
+                }  else  {
 
-                } 
-                
-                return $this -> titolo . $this -> sottotitolo;
-                
-            }        
+                    return $this -> titolo . " | ";
+
+                }
+                                
+            } 
 
             public function __toString() {
 
-                return $this -> getFullTitle() . " : " . $this -> regista;
+                if ($this -> regista) {
+
+                    return $this -> getFullTitle() . " : " . $this -> regista;
+
+                }  else  {
+
+                    return $this -> getFullTitle() . " ??? ";
+
+                }
 
             }
         }
 
-        $movie1 = new Film("Matrix", "");
-        $movie2 = new Film("Fantozzi 2", "il ritorno di fantozzi");
-        $movie3 = new Film("Peter Pan", "il ritorno all'isola che non c'e'");
+        $movie1 = new Film("Matrix ", "");
+        $movie2 = new Film("Fantozzi 2 ", " il ritorno di fantozzi ");
+        $movie3 = new Film("Peter Pan ", " il ritorno all'isola che non c'e' ");
 
         $movie1 -> regista = "";
         $movie2 -> regista = "";
