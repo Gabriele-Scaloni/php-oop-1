@@ -51,19 +51,19 @@
             
             public function __construct($titolo, $sottotitolo) {
 
-                $this -> titolo = $titolo;
-                $this -> sottotitolo = $sottotitolo;
+                $this->titolo = $titolo;
+                $this->sottotitolo = $sottotitolo;
             }
 
             public function getFullTitle() {
                 //se sottotitolo é true me lo stampa, altrimenti "|"
-                 if ($this -> sottotitolo) {
+                 if ($this->sottotitolo) {
 
-                    return $this -> titolo . " : " . $this -> sottotitolo;
+                    return $this->titolo . " : " . $this->sottotitolo;
 
                 }  else  {
 
-                    return $this -> titolo . " | ";
+                    return $this->titolo . " | ";
 
                 }
                                 
@@ -71,13 +71,13 @@
 
             public function __toString() {
 
-                if ($this -> regista) {
+                if ($this->regista) {
 
-                    return $this -> getFullTitle() . " : " . $this -> regista;
+                    return $this->getFullTitle() . " : " . $this->regista;
 
                 }  else  {
 
-                    return $this -> getFullTitle() . " ??? ";
+                    return $this->getFullTitle() . " ??? ";
 
                 }
 
@@ -85,12 +85,10 @@
         }
 
         $movie1 = new Film("Matrix ", "");
-        $movie2 = new Film("Fantozzi 2 ", " il ritorno di fantozzi ");
-        $movie3 = new Film("Peter Pan ", " il ritorno all'isola che non c'e' ");
+        $movie2 = new Film("Fantozzi 2 ", "il ritorno di fantozzi");
+        $movie3 = new Film("Peter Pan ", "il ritorno all'isola che non c'è");
 
-        $movie1 -> regista = "";
-        $movie2 -> regista = "";
-        $movie3 -> regista = "Robin Budd";
+        $movie3->regista = "Robin Budd";
 
         echo "<br>" . "movie1 : " . $movie1 . "<br>";
         echo "<br>" . "movie2 : " . $movie2 . "<br>";
